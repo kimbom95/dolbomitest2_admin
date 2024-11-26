@@ -1,0 +1,293 @@
+
+
+
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<!-- 캐싱방지 -->
+	<!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT"> -->
+	<!-- 모바일 상단,타이틀바,주소창 색변경(안드로이드에서 크롬,파폭,오페라,삼성브라우저만 가능) -->
+	<!-- <meta name="theme-color" content="#4285f4"> -->
+
+	<title>IWorks Sysyem</title>
+
+	<link rel="stylesheet" href="../../../common/css/swiper.css" />
+	<link rel="stylesheet" href="../../../common/css/tui-date-picker.css" /><!--20240419 toast date picker css 추가-->
+	<!-- <link rel="stylesheet" href="../../../common/css/jquery-ui.min.css" /> -->
+	<link rel="stylesheet" href="../../../common/css/style.css" />
+	
+	<link rel="stylesheet" href="../../../common/css/basic-orange.css" />
+	
+	
+	<script src="../../../common/js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="../../../common/js/jquery-ui.min.js"></script> -->
+	<script src="../../../common/js/swiper.js"></script>
+	<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script> <!--toast ui-->
+	<script src="../../../common/js/basic.js"></script>
+	<script src="../../../common/js/layout/dolbom.js"></script>
+    
+</head>
+<body>
+<div class="skip"><a class="quickBtn" href="#container">본문바로가기</a></div>
+<div class="wrap">
+
+<!-- 레이아웃 -->
+<div class="lytLayout  orange"> <!-- 테마 클래스 들어가는 위치 thema1, thema2, .. 등 --> <!-- 레이아웃 클래스 들어가는 위치 lthema1, lthema2, .. 등 -->
+    <div class="layoutArea">
+
+        <!-- 상단영역 -->
+        <div class="layoutTop">
+            <!-- Top -->
+            
+
+<div class="cptHeader">
+    <div class="headerArea">
+        <div class="headerLogo"><h1><a href="#"><img src="../../../common/images/common/dolbomi_logo.png" alt="" /></a></h1></div>
+        <div class="headerGroup">
+            <div class="headerProfile">
+                <dl class="headerDate">
+                    <dt>최종 로그인 날짜 : </dt>
+                    <dd>2022-12-30 AM 09:30:00</dd>
+                </dl>
+                <div class="headerUser"><b>홍길동</b>님</div> <!-- addClass - arr : 셀렉트 아이콘 표시, on : 셀렉트 아이콘 위/아래 표시 -->
+                <a href="#" class="headerBtn">로그아웃</a>
+                <a href="#" class="headerBtn" onclick="openPopup('sample01')">정보수정</a> <!-- 클릭 시, 회원 정보 상세 팝업 호출 (result1.html / result2.html) -->
+            </div>
+            <div class="headerNav">
+                <ul class="menuList" style="justify-content: flex-start;">
+                    <li class="menuItem"> <!-- class : on : 1depth 메뉴 활성화 -->
+                        <a href="#">인적성 검사 목록</a>
+                    </li>
+                    <li class="menuItem">
+                        <a href="#">인적성 검사 통계</a>
+                    </li>
+                    <li class="menuItem">
+                        <a href="#">시스템 관리</a> <!-- 한가원 관리자 로그인시에만 노출 -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        <!-- //상단영역 -->
+
+        <!-- 중단영역 -->
+        <div class="layoutContainer ">
+
+            <!-- 좌측 메뉴 영역 -->
+            <div class="layoutNav">
+
+				
+
+<div class="cptSnav">
+    <div class="snavArea">
+        <div class="snavMenu">
+            <div class="snavTitle">게시판관리</div>
+            <ul class="menuList">
+                <li class="menuItem"> <!-- class : on : 1depth 메뉴 활성화 -->
+                    <a href="#">인적성 검사 목록</a>
+                </li>
+                <li class="menuItem"> <!--2 depth 경우 dropdown 클래스 추가-->
+                    <a href="#">인적성 검사 통계</a>
+                </li>
+                <li class="menuItem dropdown"> <!--2 depth 경우 dropdown 클래스 추가-->
+                    <a href="#">시스템 관리</a>
+                    <ul class="subMenu" style="display: block;">
+                        <li><a href="#">지역/광역센터 담당자 관리</a></li>
+                        <li><a href="#">한가원 사용자 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="snavBtm">
+                <!-- <button class="iconDownload">관리시스템 메뉴얼</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+                <div class="sideSlide">
+                    <button class="btnSlide">메뉴 열기/닫기</button>
+                </div>
+
+            </div>
+            <!-- //좌측 메뉴 영역 -->
+
+            <!-- 콘텐츠 영역 -->
+            <div class="layoutCont"> <!-- 테마 클래스 들어가는 위치 thema1, thema3, .. 등 -->
+				
+
+<!-- 컨텐츠 내용 -->
+<!-- 진행률 팝업 -->
+<div id="progressPop1" class="modPopup sm on"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('progressPop1');">닫기</button>
+                    <div class="popTitle">인적성 검사 이력</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+                    
+                        <!-- tab in page -->
+                        <div class="modTab in dolbom" style="padding-top:0; margin-top:0;"> <!-- addClass - in : 페이지 내 컨텐츠가 교체, out : 페이지 링크 -->
+                            <ul class="tabMenu">
+                                <li class="item on"><a href="#">1회차</a></li>
+                                <li class="item"><a href="#">2회차</a></li>
+                                <li class="item"><a href="#">3회차</a></li>
+                            </ul>
+                            <!-- modTab in 영역 -->
+                            <div class="tabContGroup">
+                                <div class="tabCont on">
+                                    <div class="testInformation">
+                                        <div class="testInfo">
+                                            <span class="date">검사날짜 : <span>2024-03-02</span></span>
+                                            <span class="proceed">진행율 : <span>60%</span></span>
+                                            <span class="remain">남은시간 : <span>00:53:00</span></span>
+                                        </div>
+                                        <div class="remainInfo">
+                                            <button type="button" class="printBtn">프린트하기</button>
+                                        </div>
+                                    </div>
+                                    <div class="viewerArea">
+                                        <!--viewer활용 데이터 표기 영역-->
+
+                                        <span class="sampleCover"><!--개발시 삭제 바람-->
+                                            <span>뷰어 형태로 노출 예정</span><!--개발시 삭제 바람-->
+                                        </span><!--개발시 삭제 바람-->
+                                    </div>
+                                </div>
+                                <div class="tabCont">
+                                    <div class="testInformation">
+                                        <div class="testInfo">
+                                            <span class="date">검사날짜 : <span>2024-03-02</span></span>
+                                            <span class="proceed">진행율 : <span>60%</span></span>
+                                            <span class="remain">남은시간 : <span>00:53:00</span></span>
+                                        </div>
+                                        <div class="remainInfo">
+                                            <button type="button" class="printBtn">프린트하기</button>
+                                        </div>
+                                    </div>
+                                    <div class="viewerArea">
+                                        <!--viewer활용 데이터 표기 영역-->
+                                        
+                                        <span class="sampleCover"><!--개발시 삭제 바람-->
+                                            <span>뷰어 형태로 노출 예정</span><!--개발시 삭제 바람-->
+                                        </span><!--개발시 삭제 바람-->
+                                    </div>
+                                </div>
+                                <div class="tabCont">
+                                    <div class="testInformation">
+                                        <div class="testInfo">
+                                            <span class="date">검사날짜 : <span>2024-03-02</span></span>
+                                            <span class="proceed">진행율 : <span>60%</span></span>
+                                            <span class="remain">남은시간 : <span>00:53:00</span></span>
+                                        </div>
+                                        <div class="remainInfo">
+                                            <button type="button" class="printBtn">프린트하기</button>
+                                        </div>
+                                    </div>
+                                    <div class="viewerArea">
+                                        <!--viewer활용 데이터 표기 영역-->
+                                        
+                                        <span class="sampleCover"><!--개발시 삭제 바람-->
+                                            <span>뷰어 형태로 노출 예정</span><!--개발시 삭제 바람-->
+                                        </span><!--개발시 삭제 바람-->
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                            $(document).ready(function(){
+                                //탭메뉴 스크립트
+                                $(".modTab li.item a").on("click",function(e){
+                                    if($(this).parents(".modTab").hasClass("in")){
+                                        e.preventDefault();
+                                        let _idx = $(this).parent().index();
+                                        $(this).parents(".tabMenu").find(".item").eq(_idx).addClass("on").siblings().removeClass("on");
+                                        $(this).parents(".modTab").find(".tabCont").eq(_idx).addClass("on").siblings().removeClass("on");
+                                    }
+                                });
+                            });
+                            </script>
+                        </div>
+
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <div class="popBtm">
+                        <button class="btn dkBlue" onclick="closePopup('progressPop1');">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //컨텐츠 내용 -->
+<script>
+    // script for grid (data table) right side possible to scroll in vertical
+    // 테이블 구역 표시
+    $("document").ready(function(){
+        $(".cptVertScr table tr td").hover(function(ev){
+            $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+            var row = $(this).parents("table").find("tr").length - 1;
+            var idx_tr = $(this).parent("tr").index()+1;
+            var idx_td = $(this).index()+1;
+            var area = $(this).parents("div");
+            
+            $(this).parent("tr").find("td").addClass("mEnt");
+
+            $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+            //if($(area).hasClass("lftHead")){
+            //}else if($(area).hasClass("rytBody")){
+            //    $(".rytBody table tr td").removeClass("mEnt");
+            //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+            //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //}
+        }, function(ev){
+            $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").css("color","#333;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+            $(this).parent("tr").removeClass("mEnt");  
+        })
+    })
+</script>
+
+
+
+
+            </div>
+            <!-- //콘텐츠 영역 -->
+
+        </div>
+        <!-- //중단영역 -->
+
+
+        <!-- 하단영역 -->
+        <div class="layoutFooter">
+        <!-- Footer -->
+        
+        </div>
+        <!-- //하단영역 -->
+
+    </div>
+</div>
+
+<!-- 팝업이 들어오는 영역 -->
+
+
+</div>
+</body>
+</html>

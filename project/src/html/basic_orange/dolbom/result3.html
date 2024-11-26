@@ -1,0 +1,150 @@
+<%- include('../../layout/type01_dolbom/header.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<!-- 컨텐츠 내용 -->
+<!-- 진행률 팝업 -->
+<div id="progressPop1" class="modPopup sm on"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('progressPop1');">닫기</button>
+                    <div class="popTitle">인적성 검사 이력</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+                    
+                        <!-- tab in page -->
+                        <div class="modTab in dolbom" style="padding-top:0; margin-top:0;"> <!-- addClass - in : 페이지 내 컨텐츠가 교체, out : 페이지 링크 -->
+                            <ul class="tabMenu">
+                                <li class="item on"><a href="#">1회차</a></li>
+                                <li class="item"><a href="#">2회차</a></li>
+                                <li class="item"><a href="#">3회차</a></li>
+                            </ul>
+                            <!-- modTab in 영역 -->
+                            <div class="tabContGroup">
+                                <div class="tabCont on">
+                                    <div class="testInformation">
+                                        <div class="testInfo">
+                                            <span class="date">검사날짜 : <span>2024-03-02</span></span>
+                                            <span class="proceed">진행율 : <span>60%</span></span>
+                                            <span class="remain">남은시간 : <span>00:53:00</span></span>
+                                        </div>
+                                        <div class="remainInfo">
+                                            <button type="button" class="printBtn">프린트하기</button>
+                                        </div>
+                                    </div>
+                                    <div class="viewerArea">
+                                        <!--viewer활용 데이터 표기 영역-->
+
+                                        <span class="sampleCover"><!--개발시 삭제 바람-->
+                                            <span>뷰어 형태로 노출 예정</span><!--개발시 삭제 바람-->
+                                        </span><!--개발시 삭제 바람-->
+                                    </div>
+                                </div>
+                                <div class="tabCont">
+                                    <div class="testInformation">
+                                        <div class="testInfo">
+                                            <span class="date">검사날짜 : <span>2024-03-02</span></span>
+                                            <span class="proceed">진행율 : <span>60%</span></span>
+                                            <span class="remain">남은시간 : <span>00:53:00</span></span>
+                                        </div>
+                                        <div class="remainInfo">
+                                            <button type="button" class="printBtn">프린트하기</button>
+                                        </div>
+                                    </div>
+                                    <div class="viewerArea">
+                                        <!--viewer활용 데이터 표기 영역-->
+                                        
+                                        <span class="sampleCover"><!--개발시 삭제 바람-->
+                                            <span>뷰어 형태로 노출 예정</span><!--개발시 삭제 바람-->
+                                        </span><!--개발시 삭제 바람-->
+                                    </div>
+                                </div>
+                                <div class="tabCont">
+                                    <div class="testInformation">
+                                        <div class="testInfo">
+                                            <span class="date">검사날짜 : <span>2024-03-02</span></span>
+                                            <span class="proceed">진행율 : <span>60%</span></span>
+                                            <span class="remain">남은시간 : <span>00:53:00</span></span>
+                                        </div>
+                                        <div class="remainInfo">
+                                            <button type="button" class="printBtn">프린트하기</button>
+                                        </div>
+                                    </div>
+                                    <div class="viewerArea">
+                                        <!--viewer활용 데이터 표기 영역-->
+                                        
+                                        <span class="sampleCover"><!--개발시 삭제 바람-->
+                                            <span>뷰어 형태로 노출 예정</span><!--개발시 삭제 바람-->
+                                        </span><!--개발시 삭제 바람-->
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                            $(document).ready(function(){
+                                //탭메뉴 스크립트
+                                $(".modTab li.item a").on("click",function(e){
+                                    if($(this).parents(".modTab").hasClass("in")){
+                                        e.preventDefault();
+                                        let _idx = $(this).parent().index();
+                                        $(this).parents(".tabMenu").find(".item").eq(_idx).addClass("on").siblings().removeClass("on");
+                                        $(this).parents(".modTab").find(".tabCont").eq(_idx).addClass("on").siblings().removeClass("on");
+                                    }
+                                });
+                            });
+                            </script>
+                        </div>
+
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <div class="popBtm">
+                        <button class="btn dkBlue" onclick="closePopup('progressPop1');">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //컨텐츠 내용 -->
+<script>
+    // script for grid (data table) right side possible to scroll in vertical
+    // 테이블 구역 표시
+    $("document").ready(function(){
+        $(".cptVertScr table tr td").hover(function(ev){
+            $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+            var row = $(this).parents("table").find("tr").length - 1;
+            var idx_tr = $(this).parent("tr").index()+1;
+            var idx_td = $(this).index()+1;
+            var area = $(this).parents("div");
+            
+            $(this).parent("tr").find("td").addClass("mEnt");
+
+            $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+            //if($(area).hasClass("lftHead")){
+            //}else if($(area).hasClass("rytBody")){
+            //    $(".rytBody table tr td").removeClass("mEnt");
+            //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+            //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //}
+        }, function(ev){
+            $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").css("color","#333;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+            $(this).parent("tr").removeClass("mEnt");  
+        })
+    })
+</script>
+
+<%- include('../../layout/type01_dolbom/bottom.ejs', {
+    url: "../../../"
+}) %>

@@ -1,0 +1,218 @@
+
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<!-- 캐싱방지 -->
+	<!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT"> -->
+	<!-- 모바일 상단,타이틀바,주소창 색변경(안드로이드에서 크롬,파폭,오페라,삼성브라우저만 가능) -->
+	<!-- <meta name="theme-color" content="#4285f4"> -->
+
+	<title>IWorks Sysyem</title>
+
+	<link rel="stylesheet" href="../../../common/css/swiper.css" />
+	<link rel="stylesheet" href="../../../common/css/tui-date-picker.css" /><!--20240419 toast date picker css 추가-->
+	<!-- <link rel="stylesheet" href="../../../common/css/jquery-ui.min.css" /> -->
+	<link rel="stylesheet" href="../../../common/css/style.css" />
+	
+	<link rel="stylesheet" href="../../../common/css/basic-orange.css" />
+	
+	
+	<script src="../../../common/js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="../../../common/js/jquery-ui.min.js"></script> -->
+	<script src="../../../common/js/swiper.js"></script>
+	<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script> <!--toast ui-->
+	<script src="../../../common/js/basic.js"></script>
+	<script src="../../../common/js/layout/dolbom.js"></script>
+    
+</head>
+<body>
+<div class="skip"><a class="quickBtn" href="#container">본문바로가기</a></div>
+<div class="wrap">
+
+<style>
+   html,body,.wrap {width:100%; height:100%;}
+</style>
+
+<div id="sample01" class="modPopup md on"> <!-- class - md : 중간 팝업, on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button type="button" class="btnPopClose" onclick="closePopup('sample01');">닫기</button>
+                    <div class="popTitle">계정 기간 연장</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+
+                        <!-- 작은 타이틀 -->
+                        <!-- <div class="comSmTit">
+                            <div class="alignL">
+                                <div class="title">게시글 내용</div>
+                            </div>
+                        </div> -->
+
+                        <!-- 테이블 -->
+                        <div class="cptTable">
+                            <table class="tbView">
+                                <colgroup>
+                                    <col style="width:110px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <caption></caption>
+                                <tbody>
+                                    <tr>
+                                        <th class="left">이름<span class="required">*</span></th>
+                                        <td class="left"><input type="text" class="iptText" placeholder="홍길동"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">센터코드<span class="required">*</span></th>
+                                        <td class="left"><input type="text" class="iptText" placeholder="NNNNN"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">광역센터명<span class="required">*</span></th>
+                                        <td class="left"><input type="text" class="iptText" placeholder="OOO센터"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">아이디<span class="required">*</span></th>
+                                        <td class="left"><input type="text" class="iptText" placeholder="aaaaa"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">전화번호<span class="required">*</span></th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <select name="" id="" class="iptSlt">
+                                                    <option value="">선택</option>
+                                                </select>
+                                                <div class="textBox deco">-</div>
+                                                <input type="text" class="iptText">
+                                                <div class="textBox deco">-</div>
+                                                <input type="text" class="iptText">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">이메일<span class="required">*</span></th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <input type="text" class="iptText">
+                                                <div class="textBox deco">@</div>
+                                                <input type="text" class="iptText">
+                                                <select name="" id="" class="iptSlt">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">계정 만료일</th>
+                                        <td class="left"><input type="text" class="iptText" placeholder="yyyy-mm-dd"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <!-- 팝업 버튼 영역 -->
+                    <div class="popBtm">
+                        <div class="alignR">
+                            <!-- <button type="button" class="btn red" onclick="openAlert('splAlt01');">삭제</button>
+                            <button type="button" class="btn gLine">취소</button> -->
+                            <button type="button" class="btn dkBlue" onclick="openAlert('splAlt05');">신청하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 1-1 -->
+<div id="splAlt01" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정 만료일이 10일 남았습니다.<br /><em>(만료일 yyy-mm-dd)</em></span>
+        </div>
+        <div class="alertMsg lgAlertTy">[확인]을 클릭하면 연장 화면을 불러옵니다.</div>
+        <!-- <div class="alertMsg lgAlertTy">아이디 또는 비밀번호 <span>오류 1회</span> 입니다.<br/>총 5회 로그인 실패시 5분동안 접속이 차단됩니다.</div> -->
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt01');">취소</button>
+            <button class="btn dkBlue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 1-2 -->
+<div id="splAlt02" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정 만료일이 만료 되었습니다.<br /><em>(만료일 yyy-mm-dd)</em></span>
+        </div>
+        <div class="alertMsg lgAlertTy">[확인]을 클릭하면 연장 화면을 불러옵니다.</div>
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt02');">취소</button>
+            <button class="btn dkBlue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 1-3 -->
+<div id="splAlt03" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>신규 계정 신청이 거부되었습니다.<br /><em>(문의 번호 000-000-0000)</em></span>
+            <span>사유: ㅇㅇㅇㅇㅇㅇ</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt03');">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 알럿 1-4 -->
+<div id="splAlt04" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정이 정지된 상태입니다.<br /></span>
+            <span>관리자에게 확인 후 다시 로그인 해주세요.</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt04');">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 2-2 -->
+<div id="splAlt05" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정 기간 연장 신청이 완료되었습니다.</span>
+        </div>
+        <!-- <div class="alertMsg lgAlertTy">아이디 또는 비밀번호 <span>오류 1회</span> 입니다.<br/>총 5회 로그인 실패시 5분동안 접속이 차단됩니다.</div> -->
+        <div class="alertBtm">
+            <!-- <button class="btn gLine" onclick="closeAlert('splAlt01');">취소</button> -->
+            <button class="btn dkBlue" onclick="closeAlert('splAlt05');">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 영역 -->
+
+
+</div>
+</body>
+</html>

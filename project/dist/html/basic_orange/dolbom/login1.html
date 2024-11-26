@@ -1,0 +1,437 @@
+
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<!-- 캐싱방지 -->
+	<!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT"> -->
+	<!-- 모바일 상단,타이틀바,주소창 색변경(안드로이드에서 크롬,파폭,오페라,삼성브라우저만 가능) -->
+	<!-- <meta name="theme-color" content="#4285f4"> -->
+
+	<title>IWorks Sysyem</title>
+
+	<link rel="stylesheet" href="../../../common/css/swiper.css" />
+	<link rel="stylesheet" href="../../../common/css/tui-date-picker.css" /><!--20240419 toast date picker css 추가-->
+	<!-- <link rel="stylesheet" href="../../../common/css/jquery-ui.min.css" /> -->
+	<link rel="stylesheet" href="../../../common/css/style.css" />
+	
+	<link rel="stylesheet" href="../../../common/css/basic-orange.css" />
+	
+	
+	<script src="../../../common/js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="../../../common/js/jquery-ui.min.js"></script> -->
+	<script src="../../../common/js/swiper.js"></script>
+	<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script> <!--toast ui-->
+	<script src="../../../common/js/basic.js"></script>
+	<script src="../../../common/js/layout/dolbom.js"></script>
+    
+</head>
+<body>
+<div class="skip"><a class="quickBtn" href="#container">본문바로가기</a></div>
+<div class="wrap">
+
+<style>
+   html,body,.wrap {width:100%; height:100%;}
+</style>
+<div class="lytLogin dolbom">
+    <div class="cptLogin">
+        <div class="lgInner">
+            <div class="titBox">
+                <div class="logoArea"><img src="../../../common/images/common/dolbomi_logo.png" /></div>
+                <div class="mainTit">
+                    <p>아이돌보미<br/>인·적성검사<br />관리 시스템</p>
+                </div>
+                <div class="btTit">
+                    <p>돌보미의 능력과 소질을 파악 할 수 있는<br><span>아이돌보미 인적성 검사</span></p>
+                </div>
+            </div>
+            <div class="fnBox">
+                <p class="mainTit">관리자 로그인</p>
+                <div class="iptBox">
+                    <input type="text" placeholder="센터아이디를 입력해주세요."/>
+                </div>
+                <div class="iptBox">
+                    <input type="password" placeholder="비밀번호를 입력해주세요."/>
+                </div>
+                <div  class="lgBtn">
+                    <a href="#none" onclick="openAlert('loginAlt03');">로그인</a>
+                </div>
+                <div class="lgFunc">
+                    <!-- <div>
+                        <a href="#none" onclick="openPopup('sample01')">아이디/비밀번호 찾기</a>
+                        <span>·</span>
+                        <a href="#none" onclick="openPopup('sample03')">비밀번호 조회</a>
+                    </div> -->
+                    <div>
+                        <img src="/common/images/common/icon_join.png" />
+                        <a href="#none" onclick="openPopup('newPop01')">신규 계정 신청</a> <!-- 클릭 시, 신규 계정 신청 팝업 호출​ (login2.html) -->
+                    </div>
+                </div>
+                <div class="lgWarn">
+                    <img src="/common/images/basic_orange/icon_warn.png" />
+                    <span>사용자 계정이 없는 아이돌봄 광역지원센터 담당자는 신규 계정 신청을 하세요. ​</span>
+                </div>
+            </div>
+
+            <!-- <div class="authLogin fnBox">
+                <p class="mainTit">Login</p>
+                <div class="authCov">
+                    <a href="#none" class="authLoginBtn">
+                        <span class="icon"></span>
+                        <span class="txt">공동인증서로 로그인하기</span>
+                    </a>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+
+<!-- 적합성 알럿 1 -->
+<div id="loginAlt01" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+        </div>
+        <div class="alertMsg lgAlertTy">센터 아이디를 입력해주세요.</div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('loginAlt03');">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 적합성 알럿 2 -->
+<div id="loginAlt02" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+        </div>
+        <div class="alertMsg lgAlertTy">비밀번호를 입력해주세요.</div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('loginAlt03');">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 적합성 알럿 3 -->
+<div id="loginAlt03" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+        </div>
+        <div class="alertMsg lgAlertTy">가입이 안되어 있거나 아이디 또는 비밀번호가 잘못 되었습니다</div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('loginAlt03');">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 계정 만료 알럿 1-1 -->
+<div id="splAlt01" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정 만료일이 <span class="required">10</span>일 남았습니다.<br /><em>(만료일 yyy-mm-dd)</em></span>
+        </div>
+        <div class="alertMsg lgAlertTy">[확인]을 클릭하면 연장 화면을 불러옵니다.</div>
+        <div class="alertBtm">
+            <button class="btn gLine">취소</button> <!-- 클릭 시, 로그인 후 인적성 검사 조회 화면으로 이동​ -->
+            <button class="btn dkBlue" onclick="openPopup('login03')">확인</button> <!-- 클릭 시, 계정 기간 연장 팝업 호출 (login3.html) -->
+        </div>
+    </div>
+</div>
+
+<!-- 계정 사용기간 만료 알럿 1-2 -->
+<div id="splAlt02" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정 만료일이 만료 되었습니다.<br /><em>(만료일 yyy-mm-dd)</em></span>
+        </div>
+        <div class="alertMsg lgAlertTy">[확인]을 클릭하면 연장 화면을 불러옵니다.</div>
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt02');">취소</button> <!-- 클릭 시, 알럿창 닫음 -->
+            <button class="btn dkBlue" onclick="openPopup('login03')">확인</button> <!-- 클릭 시, 계정 기간 연장 팝업 호출 (login3.html) -->
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 1-3 -->
+<div id="splAlt03" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>신규 계정 신청이 거부되었습니다.<br /><em>(문의 번호 000-000-0000)</em></span>
+            <span>사유: ㅇㅇㅇㅇㅇㅇ</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt03');">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 정지 상태 한가원 관리자 로그인 알럿 1-4 -->
+<div id="splAlt04" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정이 정지된 상태입니다.<br /></span>
+            <span>관리자에게 확인 후 다시 로그인 해주세요.</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt04');">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 완료 알럿 2-2 -->
+<div id="splAlt05" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <span>계정 기간 연장 신청이 완료되었습니다.</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt05');">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 로그인 실패 알럿 -->
+<div id="splAlt00" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>로그인 실패</span>
+        </div>
+        <div class="alertMsg lgAlertTy">아이디 또는 비밀번호 <span>오류 1회</span> 입니다.<br/>총 5회 로그인 실패시 5분동안 접속이 차단됩니다.</div>
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt00');">취소</button>
+            <button class="btn dkBlue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 아이디조회 -->
+<div id="sample01" class="modPopup sm"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('sample01');">닫기</button>
+                    <div class="popTitle">아이디 조회</div>
+                    <div class="popCont">
+                        <!-- 팝업 컨텐츠 영역 -->
+                        <!-- 테이블 -->
+                        <div class="cptTable">
+                            <table class="tbView">
+                                <colgroup>
+                                    <col style="width:120px;" />
+                                    <col style="width:auto;" />
+                                </colgroup>
+                                <caption></caption>
+                                <tbody>
+                                    <tr>
+                                        <th class="left">인적성</th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <select name="" id="" class="iptSlt frmSm">
+                                                    <option value="">시 / 도 선택</option>
+                                                </select>
+                                                <select name="" id="" class="iptSlt frmMd">
+                                                    <option value="">시 / 군 / 구 선택</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">이름</th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <input type="text" class="iptText frmLg" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //팝업 컨텐츠 영역 -->
+                    </div>
+                    <div class="popBtm">
+                        <button class="btn dkBlue" onclick="openPopup('sample02');">본인인증</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 아이디조회결과 -->
+<div id="sample02" class="modPopup sm"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('sample02');">닫기</button>
+                    <div class="popTitle">아이디 조회</div>
+                    <div class="popCont">
+                        <!-- 팝업 컨텐츠 영역 -->
+
+                        <!-- 일치하는 아이디가 있을 경우 -->
+                        <div class="idenResult">
+                            <p class="scTit">조회하신 정보와 일치하는 아이디입니다.</p>
+                            <span class="scInfo">member_id</span>
+                        </div>
+
+                        <!-- 일치하는 아이디가 없을 경우 -->
+                        <div class="idenResult">
+                            <p class="flTit">조회하신 정보와 일치하는 아이디가 없습니다.</p>
+                        </div>
+
+                        <!-- //팝업 컨텐츠 영역 -->
+                    </div>
+                    <div class="popBtm">
+                        <button class="btn dkBlue" onclick="closePopup('sample02');">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 비밀번호 조회 -->
+<div id="sample03" class="modPopup sm"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('sample03');">닫기</button>
+                    <div class="popTitle">비밀번호 조회</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+                        <!-- 테이블 -->
+                        <div class="cptTable">
+                            <table class="tbView">
+                                <colgroup>
+                                    <col style="width:120px;" />
+                                    <col style="width:auto;" />
+                                </colgroup>
+                                <caption></caption>
+                                <tbody>
+                                    <tr>
+                                        <th class="left">인적성</th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <select name="" id="" class="iptSlt frmSm">
+                                                    <option value="">시 / 도 선택</option>
+                                                </select>
+                                                <select name="" id="" class="iptSlt frmMd">
+                                                    <option value="">시 / 군 / 구 선택</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">이름</th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <input type="text" class="iptText frmLg" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">아이디</th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <input type="text" class="iptText frmLg" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <div class="popBtm">
+                        <button class="btn dkBlue"  onclick="openPopup('sample04');">본인인증</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 비밀번호 재설정 -->
+<div id="sample04" class="modPopup sm"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('sample04');">닫기</button>
+                    <div class="popTitle">비밀번호 재설정</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+                        <!-- 테이블 -->
+                        <!-- 작은 타이틀 + 설명글 -->
+                        <div class="comSmTit">
+                            <div class="alignL">
+                                <div class="title" style="font-size:14px;">사용하실 <b>신규 비밀번호</b>를 등록하세요.</div>
+                            </div>
+                        </div>
+                        <div class="cptTable">
+                            <table class="tbView">
+                                <colgroup>
+                                    <col style="width:120px;" />
+                                    <col style="width:auto;" />
+                                </colgroup>
+                                <caption></caption>
+                                <tbody>
+                                    <tr>
+                                        <th class="left">신규 비밀번호</th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <input type="password" class="iptText frmLg" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">비밀번호 재확인</th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <input type="password" class="iptText frmLg" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="unit" style="margin-top:5px;"><span class="desc">*비밀번호는 영문, 숫자, 특수문자 조합으로 9~16자</span></div>
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <div class="popBtm">
+                        <button class="btn dkBlue" onclick="closePopup('sample04');">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</body>
+</html>

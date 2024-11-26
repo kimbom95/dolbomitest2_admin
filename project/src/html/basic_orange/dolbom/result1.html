@@ -1,0 +1,144 @@
+<%- include('../../layout/type01_dolbom/header.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<!-- 정보수정 버튼은 팝업 top.ejs 에서 확인 가능 -->
+
+<!-- 팝업 1-1 : 정보수정 (지역/광역센터 회원) -->
+<div id="sample01" class="modPopup sm on"> <!-- class - md : 중간 팝업, on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button type="button" class="btnPopClose" onclick="closePopup('sample01');">닫기</button>
+                    <div class="popTitle">정보수정</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+
+                        <!-- 작은 타이틀 -->
+                        <!-- <div class="comSmTit">
+                            <div class="alignL">
+                                <div class="title">게시글 내용</div>
+                            </div>
+                        </div> -->
+
+                        <!-- 테이블 -->
+                        <div class="cptTable">
+                            <table class="tbView">
+                                <colgroup>
+                                    <col style="width:110px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <caption></caption>
+                                <tbody>
+                                    <tr>
+                                        <th class="left">이름<span class="required">*</span></th>
+                                        <td class="left">홍길동</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">센터코드<span class="required">*</span></th>
+                                        <td class="left">000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">광역센터명<span class="required">*</span></th>
+                                        <td class="left">한국건강가정진흥원</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">아이디<span class="required">*</span></th>
+                                        <td class="left">aaaaaa</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">비밀번호<span class="required">*</span></th>
+                                        <td class="left"><input type="text" class="iptText" placeholder="영문, 숫자, 특수문자 조합으로 8~20자리​"><br><span class="validTxt"><img src="../../../common/images/common/icon_warn.png" alt="경고" class="vaildImg">센터코드를 입력해주세요.</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">비밀번호 확인<span class="required">*</span></th>
+                                        <td class="left"><input type="text" class="iptText" placeholder="영문, 숫자, 특수문자 조합으로 8~20자리​"><br><span class="validTxt"><img src="../../../common/images/common/icon_warn.png" alt="경고" class="vaildImg">센터코드를 입력해주세요.</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">전화번호<span class="required">*</span></th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <select name="" id="" class="iptSlt">
+                                                    <option value="">선택</option>
+                                                </select>
+                                                <div class="textBox deco">-</div>
+                                                <input type="text" class="iptText">
+                                                <div class="textBox deco">-</div>
+                                                <input type="text" class="iptText">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">이메일<span class="required">*</span></th>
+                                        <td class="left">
+                                            <div class="frmGroup">
+                                                <input type="text" class="iptText">
+                                                <div class="textBox deco">@</div>
+                                                <input type="text" class="iptText">
+                                                <select name="" id="" class="iptSlt">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <!-- 팝업 버튼 영역 -->
+                    <div class="popBtm">
+                        <div class="alignR">
+                            <button type="button" class="btn gLine">취소</button>
+                            <button type="button" class="btn dkBlue">저장하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // script for grid (data table) right side possible to scroll in vertical
+    // 테이블 구역 표시
+    $("document").ready(function(){
+        $(".cptVertScr table tr td").hover(function(ev){
+            $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+            var row = $(this).parents("table").find("tr").length - 1;
+            var idx_tr = $(this).parent("tr").index()+1;
+            var idx_td = $(this).index()+1;
+            var area = $(this).parents("div");
+            
+            $(this).parent("tr").find("td").addClass("mEnt");
+
+            $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+            //if($(area).hasClass("lftHead")){
+            //}else if($(area).hasClass("rytBody")){
+            //    $(".rytBody table tr td").removeClass("mEnt");
+            //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+            //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //}
+        }, function(ev){
+            $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").css("color","#333;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+            $(this).parent("tr").removeClass("mEnt");  
+        })
+    })
+</script>
+
+<%- include('../../layout/type01_dolbom/bottom.ejs', {
+    url: "../../../"
+}) %>

@@ -1,0 +1,126 @@
+<%- include('../../layout/type01_dolbom/head.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<style>
+   html,body,.wrap {width:100%; height:100%;}
+</style>
+
+<!-- 신규 계정 신청 -->
+<div id="newPop01" class="modPopup md on"> <!-- class - md : 중간 팝업, on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button type="button" class="btnPopClose" onclick="closePopup('sample05');">닫기</button>
+                    <div class="popTitle">약관동의</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+
+                        <!-- 작은 타이틀 -->
+
+                        <div class="policyWrap">
+                            <div class="comSmTit">
+                                <div class="alignL">
+                                    <div class="title">이용약관 <span class="required">(필수)</span></div>
+                                </div>
+                            </div>
+    
+                            <div class="policyBox">
+                                <div class="policyCont">
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                </div>
+                            </div>
+                            <div class="frmChoBox"><input id="rdo001" type="radio" class="iptRdo" name="rdo001"><label for="rdo001" class="iptLbl">동의안함</label></div>
+                            <div class="frmChoBox"><input id="rdo002" type="radio" class="iptRdo" name="rdo001"><label for="rdo002" class="iptLbl">동의함</label></div>
+                        </div>
+                       
+                        <div class="policyWrap">
+                            <div class="comSmTit">
+                                <div class="alignL">
+                                    <div class="title">개인정보 수집 및 이용 <span class="required">(필수)</span></div>
+                                </div>
+                            </div>
+    
+                            <div class="policyBox">
+                                <div class="policyCont">
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                    제1조(목적)<br>
+                                    이 약관은 여성가족부가 운영하는 여성가족부 웹사이트(이하 "웹사이트"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를<br>
+                                    이용함에 있어 여성가족부 웹사이트와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                    제2조(정의)<br>
+                                    ① "웹사이트"이란 여성가족부가 전 국민에게 필요한 콘텐츠 및 제반 서비스를 이용자에게 제공하기 위한 웹사이트 (https://idolbom.go.kr)를<br>
+                                    말합니다.<br>
+                                </div>
+                            </div>
+                            <div class="frmChoBox"><input id="rdo003" type="radio" class="iptRdo" name="rdo001"><label for="rdo003" class="iptLbl">동의안함</label></div>
+                            <div class="frmChoBox"><input id="rdo004" type="radio" class="iptRdo" name="rdo001"><label for="rdo004" class="iptLbl">동의함</label></div>
+                        </div>
+
+                        <div class="policyWrap">
+                            <div class="frmChoBox"><input id="rdo005" type="radio" class="iptRdo" name="rdo001"><label for="rdo005" class="iptLbl">이용약관, 개인정보 수집 및 이용에 모두 동의합니다.​</label></div>
+                        </div>
+
+
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <!-- 팝업 버튼 영역 -->
+                    <div class="popBtm">
+                        <div class="alignR">
+                            <button type="button" class="btn dkBlue">동의하고 계속하기</button> <!-- 클릭 시, 본인인증 화면으로 이동 (login4.html) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../../layout/type01_dolbom/footer.ejs', {
+    url: "../../../"
+}) %>

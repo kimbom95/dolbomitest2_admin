@@ -1,0 +1,189 @@
+<%- include('../../layout/type01_dolbom/header.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<!-- 컨텐츠 내용 -->
+<div class="layoutContainer">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="layoutCont"> <!-- 테마 클래스 들어가는 위치 thema1, thema3, .. 등 -->
+        
+
+        <!-- 컨텐츠 내용 -->
+        <!-- 한가원 사용자 관리 팝업 2(아이디 버튼) -->
+        <div id="userPop02" class="modPopup sm on"> <!-- class - on : 팝업오픈 -->
+            <div class="popupDim">딤영역</div>
+            <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+                <div class="popupInMotion">
+                    <div class="popupContainer">
+                        <div class="popupContArea">
+                            <button class="btnPopClose" onclick="closePopup('userPop02');">닫기</button>
+                            <div class="popTitle">사용자 관리</div>
+                            <div class="popCont">
+                            
+                                <!-- 팝업 컨텐츠 영역 -->
+                                <!-- 테이블 1 -->
+                                <div class="cptTable">
+                                    <table class="tbView">
+                                        <colgroup>
+                                            <col style="width:110px;">
+                                            <col style="width:auto;">
+                                        </colgroup>
+                                        <caption></caption>
+                                        <tbody>
+                                            <tr>
+                                                <th class="left">계정구분</th>
+                                                <td class="left">
+                                                    <div class="frmChoBox"><input id="rdo0001" type="radio" class="iptRdo" name="rdo001"><label for="rdo0001" class="iptLbl">일반관리자</label></div>
+                                                    <div class="frmChoBox"><input id="rdo0002" type="radio" class="iptRdo" name="rdo002"><label for="rdo0002" class="iptLbl">슈퍼관리자</label></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="left">이름<span class="required">*</span></th>
+                                                <td class="left"><input type="text" class="iptText" placeholder="홍길동"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="left">아이디<span class="required">*</span></th>
+                                                <td class="left">aaaaa</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="left">비밀번호<span class="required">*</span></th>
+                                                <td class="left"><input type="text" class="iptText" placeholder="영문, 숫자, 특수문자 조합으로 8~20자리​"><br><span class="validTxt"><img src="../../../common/images/common/icon_warn.png" alt="경고" class="vaildImg">센터코드를 입력해주세요.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="left">비밀번호 확인<span class="required">*</span></th>
+                                                <td class="left"><input type="text" class="iptText" placeholder="영문, 숫자, 특수문자 조합으로 8~20자리​"><br><span class="validTxt"><img src="../../../common/images/common/icon_warn.png" alt="경고" class="vaildImg">센터코드를 입력해주세요.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="left">전화번호<span class="required">*</span></th>
+                                                <td class="left">
+                                                    <div class="frmGroup">
+                                                        <select name="" id="" class="iptSlt">
+                                                            <option value="">선택</option>
+                                                        </select>
+                                                        <div class="textBox deco">-</div>
+                                                        <input type="text" class="iptText">
+                                                        <div class="textBox deco">-</div>
+                                                        <input type="text" class="iptText">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="left">이메일<span class="required">*</span></th>
+                                                <td class="left">
+                                                    <div class="frmGroup">
+                                                        <input type="text" class="iptText">
+                                                        <div class="textBox deco">@</div>
+                                                        <input type="text" class="iptText">
+                                                        <select name="" id="" class="iptSlt">
+                                                            <option value="">선택</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="left">상태<span class="required">*</span></th>
+                                                <td class="left">
+                                                    <div class="frmChoBox"><input id="rdo0001" type="radio" class="iptRdo" name="rdo001"><label for="rdo0001" class="iptLbl">정상계정</label></div>
+                                                    <div class="frmChoBox"><input id="rdo0002" type="radio" class="iptRdo" name="rdo002"><label for="rdo0002" class="iptLbl">정지계정</label></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- //팝업 컨텐츠 영역 -->
+                                <!-- 팝업 버튼 영역 -->
+                                <div class="popBtm">
+                                    <div class="alignR">
+                                        <button type="button" class="btn gLine" onclick="closePopup('userPop02');">취소</button>
+                                        <button type="button" class="btn dkBlue">저장</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- //컨텐츠 내용 -->
+<script>
+// script for grid (data table) right side possible to scroll in vertical
+// 테이블 구역 표시
+$("document").ready(function(){
+$(".cptVertScr table tr td").hover(function(ev){
+    $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+    $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+    var row = $(this).parents("table").find("tr").length - 1;
+    var idx_tr = $(this).parent("tr").index()+1;
+    var idx_td = $(this).index()+1;
+    var area = $(this).parents("div");
+    
+    $(this).parent("tr").find("td").addClass("mEnt");
+
+    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+    $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+    //if($(area).hasClass("lftHead")){
+    //}else if($(area).hasClass("rytBody")){
+    //    $(".rytBody table tr td").removeClass("mEnt");
+    //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+    //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+    //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+    //}
+}, function(ev){
+    $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+    $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+    $(".cptVertScr .rytBody table tr td").css("color","#333;");
+    $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+    $(this).parent("tr").removeClass("mEnt");  
+})
+})
+</script>
+
+
+
+
+    </div>
+    <!-- //콘텐츠 영역 -->
+
+</div>
+<!-- //컨텐츠 내용 -->
+<script>
+    // script for grid (data table) right side possible to scroll in vertical
+    // 테이블 구역 표시
+    $("document").ready(function(){
+        $(".cptVertScr table tr td").hover(function(ev){
+            $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+            var row = $(this).parents("table").find("tr").length - 1;
+            var idx_tr = $(this).parent("tr").index()+1;
+            var idx_td = $(this).index()+1;
+            var area = $(this).parents("div");
+            
+            $(this).parent("tr").find("td").addClass("mEnt");
+
+            $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+            //if($(area).hasClass("lftHead")){
+            //}else if($(area).hasClass("rytBody")){
+            //    $(".rytBody table tr td").removeClass("mEnt");
+            //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+            //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //}
+        }, function(ev){
+            $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").css("color","#333;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+            $(this).parent("tr").removeClass("mEnt");  
+        })
+    })
+</script>
+
+<%- include('../../layout/type01_dolbom/bottom.ejs', {
+    url: "../../../"
+}) %>

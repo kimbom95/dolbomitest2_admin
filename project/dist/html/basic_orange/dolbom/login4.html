@@ -1,0 +1,146 @@
+
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<!-- 캐싱방지 -->
+	<!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT"> -->
+	<!-- 모바일 상단,타이틀바,주소창 색변경(안드로이드에서 크롬,파폭,오페라,삼성브라우저만 가능) -->
+	<!-- <meta name="theme-color" content="#4285f4"> -->
+
+	<title>IWorks Sysyem</title>
+
+	<link rel="stylesheet" href="../../../common/css/swiper.css" />
+	<link rel="stylesheet" href="../../../common/css/tui-date-picker.css" /><!--20240419 toast date picker css 추가-->
+	<!-- <link rel="stylesheet" href="../../../common/css/jquery-ui.min.css" /> -->
+	<link rel="stylesheet" href="../../../common/css/style.css" />
+	
+	<link rel="stylesheet" href="../../../common/css/basic-orange.css" />
+	
+	
+	<script src="../../../common/js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="../../../common/js/jquery-ui.min.js"></script> -->
+	<script src="../../../common/js/swiper.js"></script>
+	<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script> <!--toast ui-->
+	<script src="../../../common/js/basic.js"></script>
+	<script src="../../../common/js/layout/dolbom.js"></script>
+    
+</head>
+<body>
+<div class="skip"><a class="quickBtn" href="#container">본문바로가기</a></div>
+<div class="wrap">
+
+<style>
+   html,body,.wrap {width:100%; height:100%;}
+</style>
+
+<!-- 계정 기간 연장 팝업 -->
+<div id="sample01" class="modPopup sm on"> <!-- class - md : 중간 팝업, on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button type="button" class="btnPopClose" onclick="closePopup('sample01');">닫기</button>
+                    <div class="popTitle">본인인증</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+
+                        <div class="comClause">
+                            <div class="finCov">
+                                <div class="finCont">
+                                    <img src="../../../common/images/common/icon_phone.png" alt="핸드폰 아이콘 이미지 가운데에 체크표시가 되어있다.">
+                                    <p class="txt">
+                                        <span class="finTitle">본인인증</span>
+                                        <span>실명인증을 위해 휴대폰 본인인증을 진행해 주세요.</span>
+                                    </p>
+                                    <button type="button" class="compBtn">휴대폰 본인인증</button> <!-- 클릭 시, 통신사 패스(pass) 인증 호출 / 인증 완료 시, 센터 담당자 정보 입력 화면으로 이동 (center.html) -->
+                                </div>
+                            </div>                     
+                        </div>
+
+                        <!-- 테이블 -->
+                        
+
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 1-1 -->
+<div id="splAlt01" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정 만료일이 10일 남았습니다.<br /><em>(만료일 yyy-mm-dd)</em></span>
+        </div>
+        <div class="alertMsg lgAlertTy">[확인]을 클릭하면 연장 화면을 불러옵니다.</div>
+        <!-- <div class="alertMsg lgAlertTy">아이디 또는 비밀번호 <span>오류 1회</span> 입니다.<br/>총 5회 로그인 실패시 5분동안 접속이 차단됩니다.</div> -->
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt01');">취소</button>
+            <button class="btn dkBlue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 1-2 -->
+<div id="splAlt02" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정 만료일이 만료 되었습니다.<br /><em>(만료일 yyy-mm-dd)</em></span>
+        </div>
+        <div class="alertMsg lgAlertTy">[확인]을 클릭하면 연장 화면을 불러옵니다.</div>
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt02');">취소</button>
+            <button class="btn dkBlue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 알럿 1-3 -->
+<div id="splAlt03" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>신규 계정 신청이 거부되었습니다.<br /><em>(문의 번호 000-000-0000)</em></span>
+            <span>사유: ㅇㅇㅇㅇㅇㅇ</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt03');">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 알럿 1-4 -->
+<div id="splAlt04" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <img src="/common/images/common/icon_lgAlert.png" />
+            <span>계정이 정지된 상태입니다.<br /></span>
+            <span>관리자에게 확인 후 다시 로그인 해주세요.</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt04');">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 팝업 영역 -->
+
+
+</div>
+</body>
+</html>

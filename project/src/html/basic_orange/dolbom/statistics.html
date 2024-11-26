@@ -1,0 +1,315 @@
+<%- include('../../layout/type01_dolbom/header.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<!-- 컨텐츠 내용 -->
+<div class="layoutContArea">
+    <!-- h2 타이틀 -->
+    <div class="comH2Group">
+        <div class="alignL">
+            <h2>인적성 검사 통계</h2>
+        </div>
+    </div>
+     <!-- 검색조건 -->
+    <div class="cptSearchArea">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:150px;" />
+                <col style="width:30%;" />
+                <col style="width:150px;" />
+                <col style="width:auto;" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>기간검색</th>
+                    <td colspan="3">
+                        <div class="frmGroup">
+                            <div class="frmChoBox"><input id="rdo001" type="radio" class="iptRdo" name="rdo001"><label for="rdo001" class="iptLbl">1주일</label></div>
+                            <div class="frmChoBox"><input id="rdo002" type="radio" class="iptRdo" name="rdo001"><label for="rdo002" class="iptLbl">1개월</label></div>
+                            <div class="frmChoBox"><input id="rdo003" type="radio" class="iptRdo" name="rdo001"><label for="rdo003" class="iptLbl">4개월</label></div>
+                            <div class="frmChoBox"><input id="rdo004" type="radio" class="iptRdo" name="rdo001"><label for="rdo004" class="iptLbl">6개월</label></div>
+                            <div class="frmChoBox"><input id="rdo005" type="radio" class="iptRdo" name="rdo001"><label for="rdo005" class="iptLbl">12개월</label></div>
+                            <div class="iptDate"><input type="text" class="iptText" id="datepicker3"></div>
+                            <div class="textBox deco">~</div>
+                            <div class="iptDate"><input type="text" class="iptText" id="datepicker4"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>검사환경</th>
+                    <td>
+                        <div class="frmChoBox"><input id="rdo006" type="radio" class="iptRdo" name="rdo002"><label for="rdo006" class="iptLbl">전체</label></div>
+                        <div class="frmChoBox"><input id="rdo007" type="radio" class="iptRdo" name="rdo002"><label for="rdo007" class="iptLbl">PC</label></div>
+                        <div class="frmChoBox"><input id="rdo008" type="radio" class="iptRdo" name="rdo002"><label for="rdo008" class="iptLbl">테블릿</label></div>
+                    </td>
+                    <th>성별</th>
+                    <td>
+                        <div class="frmChoBox"><input id="rdo009" type="radio" class="iptRdo" name="rdo003"><label for="rdo009" class="iptLbl">전체</label></div>
+                        <div class="frmChoBox"><input id="rdo010" type="radio" class="iptRdo" name="rdo003"><label for="rdo010" class="iptLbl">남</label></div>
+                        <div class="frmChoBox"><input id="rdo011" type="radio" class="iptRdo" name="rdo003"><label for="rdo011" class="iptLbl">여</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>연령별</th>
+                    <td colspan="3">
+                        <div class="frmChoBox"><input id="rdo012" type="radio" class="iptRdo" name="rdo004"><label for="rdo012" class="iptLbl">전체</label></div>
+                        <div class="frmChoBox"><input id="rdo013" type="radio" class="iptRdo" name="rdo004"><label for="rdo013" class="iptLbl">20대</label></div>
+                        <div class="frmChoBox"><input id="rdo014" type="radio" class="iptRdo" name="rdo004"><label for="rdo014" class="iptLbl">30대</label></div>
+                        <div class="frmChoBox"><input id="rdo015" type="radio" class="iptRdo" name="rdo004"><label for="rdo015" class="iptLbl">40대</label></div>
+                        <div class="frmChoBox"><input id="rdo016" type="radio" class="iptRdo" name="rdo004"><label for="rdo016" class="iptLbl">50대</label></div>
+                        <div class="frmChoBox"><input id="rdo017" type="radio" class="iptRdo" name="rdo004"><label for="rdo017" class="iptLbl">60대</label></div>
+                        <div class="frmChoBox"><input id="rdo018" type="radio" class="iptRdo" name="rdo004"><label for="rdo018" class="iptLbl">70대</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>등급별</th>
+                    <td colspan="3">
+                        <div class="frmChoBox"><input id="rdo019" type="radio" class="iptRdo" name="rdo005"><label for="rdo019" class="iptLbl">전체</label></div>
+                        <div class="frmChoBox"><input id="rdo020" type="radio" class="iptRdo" name="rdo005"><label for="rdo020" class="iptLbl">매우양호(S)</label></div>
+                        <div class="frmChoBox"><input id="rdo021" type="radio" class="iptRdo" name="rdo005"><label for="rdo021" class="iptLbl">양호(A)</label></div>
+                        <div class="frmChoBox"><input id="rdo022" type="radio" class="iptRdo" name="rdo005"><label for="rdo022" class="iptLbl">보통(B)</label></div>
+                        <div class="frmChoBox"><input id="rdo023" type="radio" class="iptRdo" name="rdo005"><label for="rdo023" class="iptLbl">완료</label></div>
+                        <div class="frmChoBox"><input id="rdo024" type="radio" class="iptRdo" name="rdo005"><label for="rdo024" class="iptLbl">재검사필요(I)</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>상태</th>
+                    <td>
+                        <div class="frmChoBox"><input id="rdo025" type="radio" class="iptRdo" name="rdo006"><label for="rdo025" class="iptLbl">전체</label></div>
+                        <div class="frmChoBox"><input id="rdo026" type="radio" class="iptRdo" name="rdo006"><label for="rdo026" class="iptLbl">일관적</label></div>
+                        <div class="frmChoBox"><input id="rdo027" type="radio" class="iptRdo" name="rdo006"><label for="rdo027" class="iptLbl">검사완료</label></div>
+                    </td>
+                    <th>검사차수</th>
+                    <td>
+                        <div class="frmChoBox"><input id="rdo028" type="radio" class="iptRdo" name="rdo007"><label for="rdo028" class="iptLbl">전체</label></div>
+                        <div class="frmChoBox"><input id="rdo029" type="radio" class="iptRdo" name="rdo007"><label for="rdo029" class="iptLbl">1차</label></div>
+                        <div class="frmChoBox"><input id="rdo030" type="radio" class="iptRdo" name="rdo007"><label for="rdo030" class="iptLbl">2차</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>키워드</th>
+                    <td colspan="3">
+                        <div class="frmGroup">
+                            <select name="" id="" class="iptSlt frmSm">
+                                <option value="">전체</option>
+                                <option value="">아이디</option>
+                                <option value="">회원명</option>
+                                <option value="">연락처</option>
+                                <option value="">이메일</option>
+                            </select>
+                            <input type="text" class="iptText">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="right">
+                        <button class="btnReset">초기화</button>
+                        <button class="btnSearch">검색</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- 그리드/테이블 상단 -->
+    <div class="cptGroupTop">
+        <div class="alignL">
+            <div class="unit"><span class="text">총 <span class="total">100</span>개의 정보가 등록되어 있습니다.</span></div>
+        </div>
+        <div class="alignR">
+            <div class="comSideOpt">
+                <ul class="opList">
+                    <li class="item">
+                        <div class="frmGroup">
+                            <select name="" id="" class="iptSlt">
+                                <option value="">30개씩</option>
+                                <option value="">60개씩</option>
+                                <option value="">90개씩</option>
+                            </select>
+                        </div>
+                    </li>
+                    <!-- <li class="item">
+                        <button class="srhBtn bLine">엑셀다운로드</button>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--테이블 가로 스크롤 적용-->
+    <div class="cptVertScr">
+        <!--대상구분 데이터 영역-->
+        <div class="lftHead">
+            <table>
+                <colgroup>
+                    <col style="width:3%" />
+                    <col style="width:3%" />
+                    <col style="width:3%" />
+                    <col style="width:3%" />
+                    <col style="width:5%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>순번</th>
+                        <th>회원명</th>
+                        <th>성별</th>
+                        <th>연령대</th>
+                        <th>센터명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td>10</td>
+                        <td><span class="testerNm" title="홍길동" onclick="openPopup('personalInfo')">홍길동</span></td>
+                        <td>남</td>
+                        <td>20대</td>
+                        <td>한국건강가정진흥원</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>9</td>
+                        <td><span class="testerNm" title="홍길동" onclick="openPopup('personalInfo')">홍길동</span></td>
+                        <td>남</td>
+                        <td>20대</td>
+                        <td>한국건강가정진흥원</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>8</td>
+                        <td><span class="testerNm" title="홍길동" onclick="openPopup('personalInfo')">홍길동</span></td>
+                        <td>남</td>
+                        <td>20대</td>
+                        <td>한국건강가정진흥원</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--치수 데이터 영역-->
+        <div class="rytBody">
+            <table>
+                <colgroup>
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                    <col style="width:8%;" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>검사환경</th>
+                        <th>진행률</th>
+                        <th>등급</th>
+                        <th>상태</th>
+                        <th>긍정편향</th>
+                        <th>응답일관성</th>
+                        <th>위험조항</th>
+                        <th>검사차수</th>
+                        <th>검사일자</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PC</td>
+                        <td>100%</td>
+                        <td>매우양호</td> 
+                        <td>완료</td>
+                        <td>일관적</td>
+                        <td>응답신뢰</td>
+                        <td>2건</td>
+                        <td>1회</td>
+                        <td>yyyy-mm-dd</td>
+                    </tr>
+                    <tr>
+                        <td>PC</td>
+                        <td>100%</td>
+                        <td>매우양호</td> 
+                        <td>완료</td>
+                        <td>일관적</td>
+                        <td>응답신뢰</td>
+                        <td>2건</td>
+                        <td>1회</td>
+                        <td>yyyy-mm-dd</td>
+                    </tr>
+                    <tr>
+                        <td>PC</td>
+                        <td>100%</td>
+                        <td>매우양호</td> 
+                        <td>완료</td>
+                        <td>일관적</td>
+                        <td>응답신뢰</td>
+                        <td>2건</td>
+                        <td>1회</td>
+                        <td>yyyy-mm-dd</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- 페이징 -->
+    <div class="comPaging dolbom">
+        <a class="start" href="#"></a>
+        <a class="prev" href="#"></a>
+        <ul class="numList">
+            <li><a href="#">1</a></li>
+            <li class="on"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+        </ul>
+        <a class="next" href="#"></a>
+        <a class="end" href="#"></a>
+    </div>
+
+    
+</div>
+<!-- //팝업 영역 -->
+<!-- //컨텐츠 내용 -->
+<script>
+    // script for grid (data table) right side possible to scroll in vertical
+    // 테이블 구역 표시
+    $("document").ready(function(){
+        $(".cptVertScr table tr td").hover(function(ev){
+            $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+            var row = $(this).parents("table").find("tr").length - 1;
+            var idx_tr = $(this).parent("tr").index()+1;
+            var idx_td = $(this).index()+1;
+            var area = $(this).parents("div");
+            
+            $(this).parent("tr").find("td").addClass("mEnt");
+
+            $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+            //if($(area).hasClass("lftHead")){
+            //}else if($(area).hasClass("rytBody")){
+            //    $(".rytBody table tr td").removeClass("mEnt");
+            //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+            //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //}
+        }, function(ev){
+            $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").css("color","#333;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+            $(this).parent("tr").removeClass("mEnt");  
+        })
+    })
+</script>
+
+<%- include('../../layout/type01_dolbom/bottom.ejs', {
+    url: "../../../"
+}) %>

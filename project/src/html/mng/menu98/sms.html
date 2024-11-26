@@ -1,0 +1,81 @@
+<%- include('../../layout/mng/head.ejs', {
+    url: '../../../',
+    winpop: 'winpop',
+}) %>
+
+
+<!-- 그리드/테이블 상단 -->
+<div class="cptGroupTop mTzero"> <!--20230214 클래스 추가-->
+    <div class="alignL">
+        <div class="title">SMS 발송</div>
+    </div>
+</div>
+
+<!-- 그리드/테이블 하단 버튼 -->
+<div class="cptTable mT20">
+    <table class="tbView">
+        <colgroup>
+            <col style="width:120px;" />
+            <col style="width:auto;" />
+            <col style="width:auto;" />
+        </colgroup>
+        <caption></caption>
+        <tbody>
+            <tr>
+                <th class="left">수신번호<span class="required">*</span></th>
+                <td class="left">
+                    <textarea style="height: 205px;" placeholder="2개 이상 입력 시, &#10;엔터로 구분하여 &#10;숫자만 입력해 주세요. &#10;10개까지 &#10;입력하실 수 있습니다.&#10;예) &#10;01012345678&#10;01023456789&#10;01034567890"></textarea>
+                </td>
+                <td>
+                    <div class="frmGroup">
+                        <div class="fileBox">
+                            <div class="fileBefore">
+                                <label for="uploadBtn1" class="gridBtn dkbLine">엑셀업로드</label>
+                                <input type="file" id="uploadBtn1" class="uploadBtn">
+                            </div>
+                        </div>
+                    </div>
+                    * 수신번호가 10개를 초과할 경우 엑셀 파일을 업로드하여​ 최대 100명에게 한 번에 문자 발송이 가능합니다.
+                    <br><br>
+                    <button class="gridBtn blLine">양식 다운로드</button>
+                    <br>
+                    * 엑셀 업로드를 위한 양식을 다운로드 받으실 수 있습니다.
+                </td>
+            </tr>
+            <tr>
+                <th class="left">발신번호</th>
+                <td class="left" colspan="2">02-2067-5000</td>
+            </tr>
+            <tr>
+                <th class="left">제목</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <input type="text" class="iptText" disabled />
+                    </div>
+                </td>
+                <td>
+                    * 내용이 80자를 초과할 경우 LMS로 발송되며, 제목을 입력하실 수 있습니다.
+                </td>
+            </tr>
+            <tr>
+                <th class="left">내용<span class="required">*</span></th>
+                <td class="left">
+                    <textarea></textarea>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 그리드/테이블 하단 버튼 -->
+<div class="cptGroupBtm alignR">
+    <div class="comSideOpt">
+        <button type="button" class="crudBtn red">취소</button>
+        <button type="button" class="crudBtn purple">발송</button>
+    </div>
+</div>
+
+
+
+<%- include('../../layout/mng/footer.ejs', {}) %>

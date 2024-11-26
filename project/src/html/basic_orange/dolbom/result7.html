@@ -1,0 +1,97 @@
+<%- include('../../layout/type01_dolbom/header.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<!-- 컨텐츠 내용 -->
+<!-- 코멘트 팝업 -->
+<div id="progressPop5" class="modPopup sm on"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('progressPop5');">닫기</button>
+                    <div class="popTitle">코멘트</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+                        <div class="textareaCover">
+                            <div class="textareaBox">
+                                <textarea name="" id="" placeholder="내용을 입력해주세요."></textarea>
+                            </div>
+                        </div>
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <div class="popBtm">
+                        <button class="btn gLine" onclick="closePopup('progressPop5');">취소</button>
+                        <button class="btn red" onclick="openAlert('splAlt02');">삭제</button> <!--기존 내용이 있을 경우에만 표기 됨 / 삭제 버튼 활성화일때 클릭 시, 코멘트 알럿 호출 -->
+                        <button class="btn dkBlue" onclick="openAlert('splAlt01');">저장</button> <!-- 저장 클릭 시, 코멘트 알럿 호출  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 코멘트 알럿 1-1 -->
+<div id="splAlt01" class="modAlert">
+    <div class="alertArea">
+        <div class="alertMsg">저장 하시겠습니까?</div>
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt01');">취소</button>
+            <button class="btn dkBlue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 코멘트 알럿 1-2 -->
+<div id="splAlt02" class="modAlert">
+    <div class="alertArea">
+        <div class="alertMsg">삭제 하시겠습니까?</div>
+        <div class="alertBtm">
+            <button class="btn gLine" onclick="closeAlert('splAlt02');">취소</button>
+            <button class="btn dkBlue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- //컨텐츠 내용 -->
+<script>
+    // script for grid (data table) right side possible to scroll in vertical
+    // 테이블 구역 표시
+    $("document").ready(function(){
+        $(".cptVertScr table tr td").hover(function(ev){
+            $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+            var row = $(this).parents("table").find("tr").length - 1;
+            var idx_tr = $(this).parent("tr").index()+1;
+            var idx_td = $(this).index()+1;
+            var area = $(this).parents("div");
+            
+            $(this).parent("tr").find("td").addClass("mEnt");
+
+            $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+            //if($(area).hasClass("lftHead")){
+            //}else if($(area).hasClass("rytBody")){
+            //    $(".rytBody table tr td").removeClass("mEnt");
+            //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+            //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //}
+        }, function(ev){
+            $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").css("color","#333;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+            $(this).parent("tr").removeClass("mEnt");  
+        })
+    })
+</script>
+
+<%- include('../../layout/type01_dolbom/bottom.ejs', {
+    url: "../../../"
+}) %>

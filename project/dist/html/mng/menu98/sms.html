@@ -1,0 +1,116 @@
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<!-- 캐싱방지 -->
+	<!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT"> -->
+	<!-- 모바일 상단,타이틀바,주소창 색변경(안드로이드에서 크롬,파폭,오페라,삼성브라우저만 가능) -->
+	<!-- <meta name="theme-color" content="#4285f4"> -->
+
+	<title>IWorks Sysyem</title>
+
+	<link rel="stylesheet" href="../../../common/css/swiper.css" />
+	<link rel="stylesheet" href="../../../common/css/tui-date-picker.css" /><!--20240419 toast date picker css 추가-->
+	<link rel="stylesheet" href="../../../common/css/tui-time-picker.css" /><!--20240531 toast date picker css 추가-->
+	<!-- <link rel="stylesheet" href="../../../common/css/jquery-ui.min.css" /> -->
+	<link rel="stylesheet" href="../../../common/css/style.css" />
+	
+	
+	<script src="../../../common/js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="../../../common/js/jquery-ui.min.js"></script> -->
+	<script src="../../../common/js/swiper.js"></script>
+	<!-- <script src="../../../common/js/tui-date-picker.js"></script>  -->
+	<script src="../../../common/js/tui-time-picker.js"></script>
+	<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
+	<script src="../../../common/js/basic.js"></script>
+	<script src="../../../common/js/layout/mng.js"></script>
+    
+</head>
+<body>
+<div class="skip"><a class="quickBtn" href="#container">본문바로가기</a></div>
+<div class="wrap winpop">
+
+
+<!-- 그리드/테이블 상단 -->
+<div class="cptGroupTop mTzero"> <!--20230214 클래스 추가-->
+    <div class="alignL">
+        <div class="title">SMS 발송</div>
+    </div>
+</div>
+
+<!-- 그리드/테이블 하단 버튼 -->
+<div class="cptTable mT20">
+    <table class="tbView">
+        <colgroup>
+            <col style="width:120px;" />
+            <col style="width:auto;" />
+            <col style="width:auto;" />
+        </colgroup>
+        <caption></caption>
+        <tbody>
+            <tr>
+                <th class="left">수신번호<span class="required">*</span></th>
+                <td class="left">
+                    <textarea style="height: 205px;" placeholder="2개 이상 입력 시, &#10;엔터로 구분하여 &#10;숫자만 입력해 주세요. &#10;10개까지 &#10;입력하실 수 있습니다.&#10;예) &#10;01012345678&#10;01023456789&#10;01034567890"></textarea>
+                </td>
+                <td>
+                    <div class="frmGroup">
+                        <div class="fileBox">
+                            <div class="fileBefore">
+                                <label for="uploadBtn1" class="gridBtn dkbLine">엑셀업로드</label>
+                                <input type="file" id="uploadBtn1" class="uploadBtn">
+                            </div>
+                        </div>
+                    </div>
+                    * 수신번호가 10개를 초과할 경우 엑셀 파일을 업로드하여​ 최대 100명에게 한 번에 문자 발송이 가능합니다.
+                    <br><br>
+                    <button class="gridBtn blLine">양식 다운로드</button>
+                    <br>
+                    * 엑셀 업로드를 위한 양식을 다운로드 받으실 수 있습니다.
+                </td>
+            </tr>
+            <tr>
+                <th class="left">발신번호</th>
+                <td class="left" colspan="2">02-2067-5000</td>
+            </tr>
+            <tr>
+                <th class="left">제목</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <input type="text" class="iptText" disabled />
+                    </div>
+                </td>
+                <td>
+                    * 내용이 80자를 초과할 경우 LMS로 발송되며, 제목을 입력하실 수 있습니다.
+                </td>
+            </tr>
+            <tr>
+                <th class="left">내용<span class="required">*</span></th>
+                <td class="left">
+                    <textarea></textarea>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 그리드/테이블 하단 버튼 -->
+<div class="cptGroupBtm alignR">
+    <div class="comSideOpt">
+        <button type="button" class="crudBtn red">취소</button>
+        <button type="button" class="crudBtn purple">발송</button>
+    </div>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

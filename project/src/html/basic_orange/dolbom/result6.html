@@ -1,0 +1,121 @@
+<%- include('../../layout/type01_dolbom/header.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<!-- 컨텐츠 내용 -->
+<!-- 재검사 사유 입력 팝업 2 -->
+<div id="progressPop4" class="modPopup sm on"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('progressPop4');">닫기</button>
+                    <div class="popTitle">재검사 사유 안내</div>
+                    <div class="popCont">
+                    
+                        <!-- 팝업 컨텐츠 영역 -->
+                        <!-- 테이블 1 -->
+                        <div class="cptTable">
+                            <table class="tbView">
+                                <colgroup>
+                                    <col style="width:110px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <caption></caption>
+                                <tbody>
+                                    <tr>
+                                        <th class="left">회원명</th>
+                                        <td class="left">홍길동</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">센터명</th>
+                                        <td class="left">한국건강가정진흥원</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">긍정편향</th>
+                                        <td class="left">일관적</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">응답일관성</th>
+                                        <td class="left">응답신뢰</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">위험조항</th>
+                                        <td class="left">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">검사일자</th>
+                                        <td class="left">yyyy-mm-dd</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">재검사 사유</th>
+                                        <td class="left">
+                                            <div class="frmChoBox"><input id="rdo0010" type="radio" class="iptRdo" name="rdo001"><label for="rdo0010" class="iptLbl">시간초과</label></div>
+                                            <div class="frmChoBox"><input id="rdo0011" type="radio" class="iptRdo" name="rdo002"><label for="rdo0011" class="iptLbl">비일관적</label></div>
+                                            <div class="frmChoBox"><input id="rdo0012" type="radio" class="iptRdo" name="rdo003"><label for="rdo0012" class="iptLbl">위험조항</label></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">재검사 사유</th>
+                                        <td class="left">
+                                            <textarea readonly>재검사 사유, 재검사 사유, 재검사 사유</textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- //팝업 컨텐츠 영역 -->
+                        <!-- 팝업 버튼 영역 -->
+                        <div class="popBtm">
+                            <div class="alignR">
+                                <button type="button" class="btn gLine" onclick="closePopup('progressPop4');">취소</button>
+                                <button type="button" class="btn dkBlue">저장</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //컨텐츠 내용 -->
+<script>
+    // script for grid (data table) right side possible to scroll in vertical
+    // 테이블 구역 표시
+    $("document").ready(function(){
+        $(".cptVertScr table tr td").hover(function(ev){
+            $(".cptVertScr .rytBody table tr td").css("color","#bbbbbb;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#bbbbbb;");
+            var row = $(this).parents("table").find("tr").length - 1;
+            var idx_tr = $(this).parent("tr").index()+1;
+            var idx_td = $(this).index()+1;
+            var area = $(this).parents("div");
+            
+            $(this).parent("tr").find("td").addClass("mEnt");
+
+            $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+
+            //if($(area).hasClass("lftHead")){
+            //}else if($(area).hasClass("rytBody")){
+            //    $(".rytBody table tr td").removeClass("mEnt");
+            //    $(".rytBody table tr td:nth-of-type("+ idx_td +")").addClass("mEnt");
+            //   $(".cptVertScr .rytBody table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //    $(".cptVertScr .lftHead table tr:nth-of-type("+ idx_tr +") > td").addClass("mEnt");
+            //}
+        }, function(ev){
+            $(".cptVertScr .lftHead table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").removeClass("mEnt");
+            $(".cptVertScr .rytBody table tr td").css("color","#333;");
+            $(".cptVertScr .rytBody table tr td a").css("color","#333;");
+            $(this).parent("tr").removeClass("mEnt");  
+        })
+    })
+</script>
+
+<%- include('../../layout/type01_dolbom/bottom.ejs', {
+    url: "../../../"
+}) %>

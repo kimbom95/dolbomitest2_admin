@@ -1,0 +1,29 @@
+<%
+var url = locals.url ? locals.url : '../../';
+%>
+
+<div class="cptSnav">
+    <div class="snavArea">
+        <div class="snavMenu">
+            <div class="snavTitle">게시판관리</div>
+            <ul class="menuList">
+                <li class="menuItem"> <!-- class : on : 1depth 메뉴 활성화 -->
+                    <a href="#">인적성 검사 목록</a>
+                </li>
+                <li class="menuItem"> <!--2 depth 경우 dropdown 클래스 추가-->
+                    <a href="#">인적성 검사 통계</a>
+                </li>
+                <li class="menuItem dropdown"> <!--2 depth 경우 dropdown 클래스 추가-->
+                    <a href="#">시스템 관리</a>
+                    <ul class="subMenu" style="display: block;">
+                        <li><a href="#">지역/광역센터 담당자 관리</a></li>
+                        <li><a href="#">한가원 사용자 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="snavBtm">
+                <!-- <button class="iconDownload">관리시스템 메뉴얼</button> -->
+            </div>
+        </div>
+    </div>
+</div>

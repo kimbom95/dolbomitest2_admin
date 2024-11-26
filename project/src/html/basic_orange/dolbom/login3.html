@@ -1,0 +1,105 @@
+<%- include('../../layout/type01_dolbom/head.ejs', {
+    url: "../../../",
+    color: "orange"
+}) %>
+
+<style>
+   html,body,.wrap {width:100%; height:100%;}
+</style>
+
+<!-- 계정 기간 연장 팝업 -->
+<div id="login03" class="modPopup sm on"> <!-- class - md : 중간 팝업, on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button type="button" class="btnPopClose" onclick="closePopup('login03');">닫기</button>
+                    <div class="popTitle">계정 기간 연장</div>
+                    <div class="popCont">
+                        
+                        <!-- 팝업 컨텐츠 영역 -->
+
+                        <!-- 작은 타이틀 -->
+                        <!-- <div class="comSmTit">
+                            <div class="alignL">
+                                <div class="title">게시글 내용</div>
+                            </div>
+                        </div> -->
+
+                        <!-- 테이블 -->
+                        <div class="cptTable">
+                            <table class="tbView">
+                                <colgroup>
+                                    <col style="width:110px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <caption></caption>
+                                <tbody>
+                                    <tr>
+                                        <th class="left">이름<span class="required">*</span></th>
+                                        <td class="left">홍길동</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">센터코드<span class="required">*</span></th>
+                                        <td class="left">000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">광역센터명<span class="required">*</span></th>
+                                        <td class="left">000센터</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">아이디<span class="required">*</span></th>
+                                        <td class="left">aaaaaa</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">전화번호<span class="required">*</span></th>
+                                        <td class="left">000-0000-0000</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">이메일<span class="required">*</span></th>
+                                        <td class="left">aaa@naver.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="left">계정 만료일</th>
+                                        <td class="left">yyyy-mm-dd</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- //팝업 컨텐츠 영역 -->
+
+                    </div>
+                    <!-- 팝업 버튼 영역 -->
+                    <div class="popBtm">
+                        <div class="alignR">
+                            <!-- <button type="button" class="btn red" onclick="openAlert('splAlt01');">삭제</button>
+                            <button type="button" class="btn gLine">취소</button> -->
+                            <button type="button" class="btn dkBlue" onclick="openAlert('splAlt05');">신청하기</button> <!-- 클릭 시, 완료 알럿 호출 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 영역 -->
+
+<!-- 완료 알럿 2-2 -->
+<div id="splAlt05" class="modAlert"> <!-- addClass - on:팝업오픈 -->
+    <div class="alertArea">
+        <div class="alertTit">
+            <span>계정 기간 연장 신청이 완료되었습니다.</span>
+        </div>
+        <div class="alertBtm">
+            <button class="btn dkBlue" onclick="closeAlert('splAlt05');">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../../layout/type01_dolbom/footer.ejs', {
+    url: "../../../"
+}) %>
