@@ -17,7 +17,7 @@
 .lytLayout .layoutContainer {width:100%; display:flex;}
 .lytLayout .layoutContainer.noNav .layoutNav {display:none;}
 .lytLayout .layoutContainer.noNav .layoutCont {width:100%;}
-.lytLayout .layoutContainer .layoutNav {width:260px; vertical-align: top; border-right:1px solid #ebebec; display:block; position:relative; z-index:1; transition:all 0.3s;}
+.lytLayout .layoutContainer .layoutNav {width:260px; vertical-align: top; display:block; position:relative; z-index:1; transition:all 0.3s;}
 .lytLayout .layoutArea .layoutContainer.on .layoutNav {width:0 ;}
 .lytLayout .layoutContainer .layoutNav .sideSlide {position:absolute; right:-16px; top:23px;}
 .lytLayout .layoutContainer .layoutNav .btnSlide {width: 16px; height:50px; border:0; font-size:0; background:url(../images/layout/type01/btn_lnbFold.svg) left top no-repeat;}
@@ -35,7 +35,7 @@
 /* ------------------------------ 헤더 : type 01 ------------------------------ */
 .cptHeader {width:100%; height:110px; position:relative;}
 .cptHeader .headerArea {width:100%; height:110px; display:flex; background:#fff; position:relative; box-shadow:0 5px 13px 0 rgba(0, 0, 0, 0.07); z-index:100;}
-.cptHeader .headerLogo {width:260px; height:110px; padding:24px 30px 16px; display:flex; align-items:center;}
+.cptHeader .headerLogo {width:260px; height:110px; padding:24px 30px 16px; display:flex; align-items:center; background: #2a2d3e !important;}
 .cptHeader .headerGroup {width:calc(100% - 260px); display:flex; flex-wrap:wrap; align-content:start;}
 .cptHeader .headerGroup .headerProfile {width:100%; padding-top:22px; padding-right:40px; display:flex; justify-content:end;}
 .cptHeader .headerGroup .headerDate {height:24px; padding-left:20px; background:url(../images/layout/type01/icon_logindate.svg) left center no-repeat; display:block;}
